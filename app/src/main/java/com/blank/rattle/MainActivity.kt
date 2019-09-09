@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
     private fun initRecyclerView() {
         rv_normal.apply {
             adapter = rattleAdapter
+            addItemDecoration(SimpleDecoration())
         }
     }
 }
