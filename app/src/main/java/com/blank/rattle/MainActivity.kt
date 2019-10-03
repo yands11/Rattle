@@ -2,6 +2,7 @@ package com.blank.rattle
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearSnapHelper
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -18,7 +19,10 @@ class MainActivity : AppCompatActivity() {
     private fun initRecyclerView() {
         rv_normal.apply {
             adapter = rattleAdapter
-            addItemDecoration(SimpleDecoration())
+        }
+        rv_snap.apply {
+            adapter = rattleAdapter
+            LinearSnapHelper().attachToRecyclerView(this)
         }
     }
 }

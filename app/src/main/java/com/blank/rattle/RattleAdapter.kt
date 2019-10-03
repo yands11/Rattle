@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class RattleAdapter : RecyclerView.Adapter<CardViewHolder>() {
 
-    private val sampleData by lazy {
+    private val cardList by lazy {
         listOf(
             SimpleCard("Leaves", "https://images.unsplash.com/photo-1566405382187-a5937a822773?ixlib=rb-1.2.1&auto=format&fit=crop&w=635&q=80"),
             SimpleCard("Apartment", "https://images.unsplash.com/photo-1567320743368-9db24e12ebf0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=765&q=80"),
@@ -25,9 +25,9 @@ class RattleAdapter : RecyclerView.Adapter<CardViewHolder>() {
             LayoutInflater.from(parent.context).inflate(R.layout.holder_simple_card, parent, false)
         )
 
-    override fun getItemCount(): Int = sampleData.size
+    override fun getItemCount(): Int = cardList.size
 
     override fun onBindViewHolder(holder: CardViewHolder, position: Int) =
-        holder.bind(sampleData[position])
+        holder.bind(cardList[position])
 
 }
